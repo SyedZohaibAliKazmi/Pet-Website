@@ -13,6 +13,8 @@ body {
 #hero-main {
   display: flex;
   justify-content: center;
+
+  object-fit: cover;
   align-items: center;
   padding: 20px 30px;
 }

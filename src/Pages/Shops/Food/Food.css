@@ -1,0 +1,22 @@
+/* Normal Navbar link styles */
+nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #41684F; /* Normal link color */
+    font-weight: 600;
+  }
+  
+  /* Active link styles */
+  nav ul li a.active {
+    color: #FBFADB; /* Color when the link is active */
+    border-bottom: 2px solid #FBFADB; /* Add underline or border to indicate active state */
+  }
+  

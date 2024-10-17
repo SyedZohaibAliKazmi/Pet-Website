@@ -1,12 +1,15 @@
-import { Link, NavLink } from 'react-router-dom';
-import Navbar from '../../Components/Navbar/Navbar';
-import './Shop.css'
 
-function Shop() {
+import { Link, NavLink } from 'react-router-dom';
+
+import './Food.css'
+import Navbar from '../../../Components/Navbar/Navbar';
+
+
+function Food() {
 
     return(
         <div>
-            <Navbar/>
+           <Navbar/>
 
             <div className="sub-link-container">
 
@@ -28,4 +31,4 @@ function Shop() {
     
 }
 
-export default Shop;
+export default Food;

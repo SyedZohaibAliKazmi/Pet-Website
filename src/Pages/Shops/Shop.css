@@ -1,0 +1,67 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+/* 
+    FBFADB  offwhite
+    41684F  green  */
+
+body {
+  background-color: #fbfadb;
+  font-family: "Libre Baskerville", "Merriweather", serif;
+}
+
+.sub-link-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.sub-link{
+    background-color: #41684F;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    color: #fbfadb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.sub-link ul {
+    display: flex;
+
+    list-style: none;
+}
+
+.sub-link ul li {
+    padding: 16px;
+    font-size: 18px;
+  }
+  
+  .sub-link a {
+    text-decoration: none;
+    color: #fbfadb;
+    padding: 0 6px;
+    font-size: 20px;
+    border-radius: 50px;
+    transition: color 0.3s, background-color 0.3s, font-weight 0.3s, filter 0.3s;
+  }
+  
+  .sub-link a:hover,
+  .sub-link a:active {
+    background-color: #fbfadb;
+    color: #41684f;
+    border-radius: 50px;
+    padding: 2px 6px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  .sub-link:hover ul li a {
+    filter: blur(1.5px);
+  }
+  .sub-link ul li a:hover {
+    filter: none;
+  }
+  
