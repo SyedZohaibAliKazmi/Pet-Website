@@ -1,0 +1,83 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+/* 
+FBFADB  offwhite
+41684F  green  */
+
+body {
+  background-color: #fbfadb;
+  font-family: "Libre Baskerville", "Merriweather", serif;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+}
+#logo h1 {
+  font-size: 30px;
+}
+#nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 60px;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #41684f;
+  color: #fbfadb;
+}
+
+#pages-link {
+  display: flex;
+}
+
+#pages-link ul {
+  display: flex;
+
+  list-style: none;
+}
+
+#pages-link ul li {
+  padding: 16px;
+  font-size: 18px;
+}
+
+#pages-link a {
+  text-decoration: none;
+  color: #fbfadb;
+  padding: 0 6px;
+  font-size: 20px;
+  border-radius: 50px;
+  transition: color 0.3s, background-color 0.3s, font-weight 0.3s, filter 0.3s;
+}
+
+#pages-link a:hover,
+#pages-link a:active {
+  background-color: #fbfadb;
+  color: #41684f;
+  border-radius: 50px;
+  padding: 2px 6px;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+#pages-link:hover ul li a {
+  filter: blur(1.5px);
+}
+#pages-link ul li a:hover {
+  filter: none;
+}
+
+#Nav-Account button {
+  margin: 0 12px;
+  font-size: 26px;
+}
+#Nav-Account button:hover,
+#Nav-Account button:active {
+  transform: scale(1.3);
+  transition: transform 0.2s ease-in-out;
+}
