@@ -1,0 +1,87 @@
+
+/* 
+  FBFADB  offwhite
+  41684F  green  */
+
+
+  .signin-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px ;
+  }
+.signin-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 20px;
+    
+    background-color: #41684f80;
+    height: 500px; /* 100% of the viewport height */
+    width: 60%; 
+    position: relative;
+}
+
+.cancel-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* background-color: red; Choose your button color */
+    color: #FBFADB;
+    font-size: 22px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.cancel-button:hover{
+    transform: scale(1.2);
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    /* padding: 5px 10px; */
+    cursor: pointer;
+}
+
+
+.signin-text {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center align items horizontally */
+  }
+  
+  .signin-text h1 {
+    /* margin: 30px; */
+    font-size: 30px;
+    color: #FBFADB;
+  }
+  
+  .signin-text button {
+    background-color: #FBFADB;
+    color: #41684F;
+    font-weight: 600;
+    padding: 10px 20px; /* Optional: Add some padding to the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Add margin to give space between heading and button */
+  }
+
+  .signin-text button:hover,
+  .signin-text button:active{
+    background-color: #41684f;
+    color: #FBFADB;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Add margin to give space between heading and button */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+
+  /* ===================== ant design ====================\ */
+
+  .custom-spin .ant-spin-dot i {
+    background-color: #FBFADB; /* Your custom color */
+  }

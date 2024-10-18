@@ -1,0 +1,39 @@
+
+
+ .layout-pages{
+
+    display: flex;
+    gap: 10%; 
+
+   
+ }
+ .user-page{
+    background-color: #FBFADB;
+    height: 100vh;
+    padding: 10px 20px;
+    justify-content: space-around;
+    width: 1/4;
+    border-radius: 8px;
+ }
+ .user-page h1{
+    color: #41684F;
+    padding-bottom: 20px;
+    text-decoration: underline ;
+ }
+
+ .user-page h2{
+    color: #41684F;
+    padding-bottom: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .user-page h2:hover,
+ .user-page h2:active{
+    cursor: pointer;
+    color: #FBFADB;
+    background-color: #41684F;
+    border-radius: 6px;
+    padding: 2px 4px;
+    transform: scale(1.1);
+    box-shadow: 10px 10px 20px #41684F(0, 0, 0, 0.3);
+ }

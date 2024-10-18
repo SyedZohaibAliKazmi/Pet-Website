@@ -73,11 +73,21 @@ body {
 }
 
 #Nav-Account button {
+  align-items: center;
   margin: 0 12px;
   font-size: 26px;
 }
 #Nav-Account button:hover,
-#Nav-Account button:active {
+#Nav-Account button:active{
+  transform: scale(1.3);
+  transition: transform 0.2s ease-in-out;
+}
+.account-button{
+  margin-bottom:10px ;
+}
+.account-button:hover,
+.account-button:active{
+  
   transform: scale(1.3);
   transition: transform 0.2s ease-in-out;
 }
