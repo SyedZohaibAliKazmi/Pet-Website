@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import { auth, db } from "../../Utils/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { Spin } from "antd";
+import './AuthContext.css'
 
 export const AuthContext = createContext();
 
@@ -35,7 +36,9 @@ function AuthContextProvider({ children }) {
           className="flex h-screen
       justify-center items-center"
         >
-          <Spin />{" "}
+          <div className="custom-spin-container">
+          <Spin size="large" />{" "}
+          </div>
         </div>
       ) : (
         children

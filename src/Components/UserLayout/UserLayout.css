@@ -9,11 +9,14 @@
  }
  .user-page{
     background-color: #FBFADB;
-    height: 100vh;
+    /* border: 1px solid #41684F; */
+    min-height: 50vh;
     padding: 10px 20px;
     justify-content: space-around;
     width: 1/4;
     border-radius: 8px;
+    margin-left: 10px;
+    margin-top: 20px;
  }
  .user-page h1{
     color: #41684F;
@@ -36,4 +39,12 @@
     padding: 2px 4px;
     transform: scale(1.1);
     box-shadow: 10px 10px 20px #41684F(0, 0, 0, 0.3);
+ }
+ .active-link h2{
+   color: #FBFADB; /* Active link ka color */
+   background-color: #41684F;
+   font-weight: bold; /* Text ko bold karna */
+   border-radius: 6px;
+    padding: 2px 4px;
+
  }

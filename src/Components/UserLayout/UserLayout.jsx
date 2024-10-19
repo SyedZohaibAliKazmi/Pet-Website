@@ -1,7 +1,7 @@
 
 
 
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./UserLayout.css";
 import Navbar from "../Navbar/Navbar";
@@ -15,16 +15,17 @@ function UserLayout() {
         
         <div className="user-page">
             <h1>Account Deatils</h1>
-          <Link to={"/user/Profile"}>
+         <NavLink to='/user/profile' className={({ isActive }) => (isActive ? "active-link" : "")} >
             <h2 >
              * Profile
             </h2>
-          </Link>
-          <Link to={"/cart"}>
+            </NavLink>
+          <NavLink to="/user/cart" className={({ isActive }) => (isActive ? "active-link" : "")}>
+         
             <h2 >
               * cart
             </h2>
-          </Link>
+            </NavLink>
          
         </div>
         <div>
