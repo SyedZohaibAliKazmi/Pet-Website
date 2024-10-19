@@ -1,0 +1,49 @@
+
+/* 
+  FBFADB  offwhite
+  41684F  green  */
+
+
+
+.main-inp{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    padding: 20px 20px;
+
+  }
+  .main-inp input {
+    display: flex;
+   
+    flex-wrap: wrap;
+
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+    background-color: #41684F;
+    color: #FBFADB;
+    font-weight: 600;
+    outline:none; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease
+  }
+  .main-inp ::placeholder{
+    color: #FBFADB;
+    font-weight: 600;
+  }
+ .main-inp input:hover,
+ .main-inp input:active{
+    border: 2px solid #FBFADB;
+    box-shadow: 0px 0px 10px #FBFADB;
+    transform: scale(1.05);
+ }
+ .main-inp span{
+    color: red;
+    font-weight: 500;
+ }

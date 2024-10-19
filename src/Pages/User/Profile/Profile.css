@@ -68,3 +68,10 @@
     font-size: 18px;
     font-weight: 400;
    }
+
+   .profile-container h1{
+    font-size: 36px;
+    color: #41684F;
+    font-weight: 900;
+    text-decoration: underline;
+   }

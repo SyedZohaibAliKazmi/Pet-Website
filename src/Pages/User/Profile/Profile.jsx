@@ -24,6 +24,11 @@ function Profile() {
     return(
         <div className="profile-main">
         <div className="profile-container">
+        {user?.email === "syedmohibali9090@gmail.com" ? (
+                <h1>"Admin"</h1>
+            ) : (
+                <div></div>
+            )}
             {user?.isLogin ? (
 
             <div className="img-container">
@@ -34,6 +39,7 @@ function Profile() {
             
             <h3>{user.displayName }</h3>
             <h4>{user.email}</h4>
+           
 
             <button onClick={handleSignOut}>Log Out</button>
 

@@ -9,9 +9,15 @@ import Food from "./Pages/Shops/Food/Food";
 import UserLayout from "./Components/UserLayout/UserLayout";
 import Profile from "./Pages/User/Profile/Profile";
 import SignIn from "./Pages/Auth/SignIn";
-import AddProduct from "./Pages/Product/AddProduct/AddProduct";
+import AddProduct from "./Pages/User/AddProduct/AddProduct";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import { useContext } from "react";
+import { AuthContext } from "./Context/AuthContext/AuthContext";
 
 function App() {
+ const {user} = useContext(AuthContext)
+ const userEmail = user?.email; // Dynamically get the user's email
+ const isAdmin = userEmail === "syedmohibali9090@gmail.com"; // Check if user is admin
   return (
     <BrowserRouter>
       <Routes>
@@ -23,9 +29,17 @@ function App() {
         <Route path="/food" element={<Food />} />
         <Route path="/user" element={<UserLayout />}>
           <Route path="profile" element={<Profile />} />
+          <Route 
+            path="addproduct" 
+            element={
+              <PrivateRoute isAdmin={isAdmin}>
+                <AddProduct/>
+              </PrivateRoute>
+            } 
+          />
         </Route>
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/addproduct" element={<AddProduct/>}/>
+        
 
         <Route path="*" element={"Page Not Found"} />
       </Routes>
