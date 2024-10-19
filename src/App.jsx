@@ -13,6 +13,7 @@ import AddProduct from "./Pages/User/AddProduct/AddProduct";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import { useContext } from "react";
 import { AuthContext } from "./Context/AuthContext/AuthContext";
+import ShopDetail from "./Pages/Shops/ShopDetail";
 
 function App() {
  const {user} = useContext(AuthContext)
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:id" element={<ShopDetail/>}/>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />

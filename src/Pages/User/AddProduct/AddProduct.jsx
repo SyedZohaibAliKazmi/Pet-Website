@@ -7,9 +7,12 @@ import { message } from "antd";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { auth, db, storageDB } from "../../../Utils/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useState } from "react";
 
 function AddProduct() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
 
   const {
     register,
@@ -21,7 +24,7 @@ function AddProduct() {
 
   const onSubmit = async (data) => {
     console.log(data);
-
+    setLoading(true);
     try {
       if (!data.img || data.img.length === 0) {
         message.error("please upload an Image ");
@@ -50,9 +53,11 @@ function AddProduct() {
       await addDoc(productCollectionRef, obj);
       reset();
       message.success("Product Added Successfully");
+      setLoading(false)
       navigate("/shop");
     } catch (error) {
       console.log("error=>", error);
+      setLoading(false)
       message.error("Error in adding product!");
     }
   };
@@ -65,7 +70,7 @@ function AddProduct() {
 
         <Input
           placeholder={"Product title"}
-          obj={{ ...register("title", { required: true, maxLength: 30 }) }}
+          obj={{ ...register("title", { required: true, maxLength: 50 }) }}
           errorMsg={"Text Length should be 30"}
           formKey={"title"}
           errors={errors}
@@ -98,16 +103,25 @@ function AddProduct() {
           errors={errors}
         />
 
-        <Input
+        {/* <Input
           placeholder={"Product Category"}
           obj={{ ...register("category", { required: true }) }}
           errorMsg={"Category is required"}
           formKey={"category"}
           errors={errors}
-        />
+        /> */}
+        <Input
+  placeholder={"Product Category"}
+  obj={{ ...register("category", { required: true }) }}
+  errorMsg={"Category is required"}
+  formKey={"category"}
+  type="select" // Specify it's a dropdown
+  options={["food", "Medicine", "Accessories"]} // Add the options
+  errors={errors}
+/>
 
         <div className="btn-container">
-          <button type="submit">Submit</button>
+          <button type="submit"  disabled={loading}> {loading ? "Submitting..." : "Submit"}</button>
         </div>
       </form>
     </div>

@@ -173,6 +173,20 @@ body {
   margin: 6px 20px;
 }
 
+.product-box button{
+  border: 1px solid #FBFADB;
+  padding: 2px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 6px 20px;
+}
+.product-box button:hover,
+ .product-box button:active {
+    background-color: #FBFADB;
+    font-weight: 600;
+    color: #41684F;
+    border: 1px solid #41684F;
+  }
 
 /* =======================\=\== Our Communty /===================================== */
 

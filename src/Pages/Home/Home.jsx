@@ -1,9 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import HeroImg from "../../Images/Hero-01.png";
 import "./Home.css";
 import { useEffect, useState } from "react";
 import Footer from "../../Components/Footer/Footer";
+import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
+import { db } from "../../Utils/firebase";
 
 function Home() {
 
@@ -11,9 +13,34 @@ function Home() {
     const [activeMembers, setActiveMembers] = useState(0);
     const [countries, setCountries] = useState(0);
     const [awards, setAwards] = useState(0);
+    const navigate = useNavigate()
     const [products, setProducts] = useState([]);
 
-const navigate = useNavigate()
+
+    useEffect(() => {
+      getProducts();
+    }, []);
+  
+    const getProducts = async () => {
+      try {
+        const productCollection = collection(db, "products");
+        const q = query(
+          productCollection,
+          orderBy("createdAt", "desc"),
+          limit(3)
+        );
+        const doc = await getDocs(q);
+        const arr = [];
+        doc.forEach((product) => arr.push({ ...product.data(), id: product.id }));
+        setProducts([...arr]);
+        // console.log("arr=>", arr);
+      } catch (error) {
+        console.log("error=>", error);
+      }
+    };
+
+
+
 
 const handleSeeAll = ()=>{
 
@@ -99,24 +126,20 @@ useEffect(() => {
         </div>
 
         <div className="container-main">
-            <div className="product-box">
-                <img className="image" src="https://images.pexels.com/photos/18111908/pexels-photo-18111908/free-photo-of-lion-at-the-zoo.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                
-                <h1>Product 1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="product-box">
-                <img className="image" src="https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+          {products.map((data)=>(
+            <Link to={"/shop"}  key={data.id}>
 
-                <h1>Product 1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
             <div className="product-box">
-                <img className="image" src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                <img className="image" src={data.img} alt="" />
 
-                <h1>Product 1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h1>{data.title.length > 20 ? `${data.title.slice(0, 20)}...` : data.title}</h1>
+                <p>{data.desc.length > 30 ? `${data.desc.slice(0,40)}...` : data.desc}</p>
+                <button>Buy</button>
             </div>
+
+            </Link>
+          ))}
+           
         </div>
       </div>
     
